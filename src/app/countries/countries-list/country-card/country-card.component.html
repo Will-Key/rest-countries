@@ -1,0 +1,21 @@
+<mat-card style="cursor: pointer;" (click)="onDetailsCountry(country.name.official)">
+  <img mat-card-image class="country-image" src="{{country.flags.png}}" alt="">
+  <mat-card-content>
+    <h4><strong>{{country.name.official}}</strong></h4>
+    <div class="row">
+      <div class="col-md-12">
+        <p>Population: {{country.population}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p>Region: {{country.region}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p>Capital: {{country.capital}}</p>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

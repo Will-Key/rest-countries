@@ -1,0 +1,24 @@
+.mat-card {
+  width: 260px;
+  height: 350px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.mat-card:hover {
+  -webkit-transform:scale(1.05); /* Safari et Chrome */
+  -moz-transform:scale(1.05); /* Firefox */
+  -ms-transform:scale(1.05); /* Internet Explorer 9 */
+  -o-transform:scale(1.05); /* Opera */
+  transform:scale(1.05);
+  border-bottom-color: rgb(104, 106, 110);;
+  transition-duration: 2s;
+}
+
+.country-image {
+  width: 260px;
+  height: 150px;
+  /* background-size: cover; */
+}

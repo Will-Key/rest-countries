@@ -1,0 +1,55 @@
+<div class="container" style="margin-top: 100px;">
+  <div class="row" style="margin-bottom: 80px;">
+    <div class="col-md-6 form-group">
+      <button mat-raised-button (click)="goBack()">
+        <mat-icon matPrefix>arrow_back</mat-icon>
+        Back
+      </button>
+    </div>
+  </div>
+  <div style="text-align:center" *ngIf="isLoading">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+  <div class="alert alert-danger" *ngIf="error">
+    <p>{{ error }}</p>
+  </div> 
+  <div>
+    <div class="row" *ngIf="!isLoading && !error">
+      <div class="col-md-6">
+        <img src="{{country.flags.svg}}" alt="{{country.name.official}}">
+      </div>
+      <div class="col-md-6" style="padding-top: 30px;">
+        <h1><strong>{{country.name.common}}</strong></h1>
+        <div class="row">
+          <div class="col-md-6">
+            <p><strong>Native Name: </strong>  {{country.name.official}}</p>
+            <p><strong>Population: </strong>  {{country.population}}</p>
+            <p><strong>Region: </strong> {{country.region}}</p>
+            <p><strong>Sub Region: </strong> {{country.subregion}}</p>
+            <p><strong>Capital: </strong> {{country.capital[0]}}</p>
+          </div>
+          <div class="col-md-6">
+            <p><strong>Top Level Domain:</strong> {{country.tld[0]}}</p>
+            <p><strong>Currencies: </strong> <span *ngFor="let currencie of currencies"> {{currencie.name}}  </span></p> <!--  -->
+            <p><strong>Language: </strong> <span *ngFor="let language of languages; let i = index">{{ language }} &nbsp;</span></p>
+          </div>
+        </div>
+        <div class="row" style="padding-top: 30px;">
+          <div class="col-md-12">
+            <p>
+              <strong>Border Countries:  </strong> 
+              <span *ngIf="borders">
+                <button class="borders-btn" mat-raised-button *ngFor="let border of borders">
+                  {{border}}
+                </button>
+              </span>
+              <span *ngIf="!borders">
+                No borders
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

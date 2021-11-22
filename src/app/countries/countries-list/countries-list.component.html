@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row" style="margin-top: 100px;">
+    <div class="col-md-6">
+      <!-- <app-search></app-search> -->
+      <mat-form-field class="searchInput" appearance="fill">
+        <mat-label>
+          Search for a country...
+        </mat-label>
+        <mat-icon matPrefix>search</mat-icon>
+        <input type="search" matInput placeholder="Search for a country" (keydown.enter)="onKeyDown($event)">
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <!-- <app-filter></app-filter> -->
+      <mat-form-field class="filterSelect" appearance="fill">
+        <mat-label>Filter by region</mat-label>
+        <mat-select name="region" (selectionChange)="onSearchByRegion($event)">
+          <mat-option *ngFor="let region of regions" [value]="region">
+            {{region}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div style="text-align:center" *ngIf="isLoading">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+  <div class="alert alert-danger" *ngIf="error">
+    <p>{{ error }}</p>
+  </div> 
+  <div class="row" style="margin-top: 50px;" *ngIf="!isLoading && !error">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3" *ngFor="let country of countries; let i = index">
+        <app-country-card 
+        [country]="country"
+        [index]="i"
+        ></app-country-card>
+    </div>
+  </div>
+</div>

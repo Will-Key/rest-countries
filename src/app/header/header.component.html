@@ -1,0 +1,13 @@
+<nav class="fixed-top navBar">
+  <mat-toolbar>
+    <span>Where in the world ?</span>
+    <span class="example-spacer"></span>
+    <a 
+      mat-button 
+      class="example-icon" 
+      aria-label="Example icon-button with share icon"
+      (click)="onSwitchMode()">
+        <mat-icon>{{mode}}</mat-icon>{{textMode}}
+    </a>
+  </mat-toolbar>
+</nav>
