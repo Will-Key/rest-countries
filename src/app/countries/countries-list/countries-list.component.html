@@ -22,14 +22,16 @@
       </mat-form-field>
     </div>
   </div>
-  <div style="text-align:center" *ngIf="isLoading">
-    <app-loading-spinner></app-loading-spinner>
+  <div class="row">
+    <div style="text-align:center" *ngIf="isLoading">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+    <div class="alert alert-danger" *ngIf="error">
+      <p>{{ error }}</p>
+    </div> 
   </div>
-  <div class="alert alert-danger" *ngIf="error">
-    <p>{{ error }}</p>
-  </div> 
   <div class="row" style="margin-top: 50px;" *ngIf="!isLoading && !error">
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3" *ngFor="let country of countries; let i = index">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let country of countries; let i = index">
         <app-country-card 
         [country]="country"
         [index]="i"
