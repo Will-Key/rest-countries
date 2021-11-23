@@ -1,6 +1,5 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { Observable, Subscription } from "rxjs";
-import { map } from "rxjs/operators";
+import { Component, OnInit } from "@angular/core";
+import { Observable } from "rxjs";
 
 import { CountriesModel } from "../countries.model"
 import { CountriesService } from "../countries.service";
@@ -11,7 +10,7 @@ import { CountriesService } from "../countries.service";
   styleUrls: ["./countries-list.component.scss"]
 })
 export class CountriesListComponent implements OnInit {
-  regions = ['Africa', 'America', 'Asia', 'Europe', 'Oceania']
+  regions = ['Filter by region', 'Africa', 'America', 'Asia', 'Europe', 'Oceania']
   countries!: CountriesModel[];
   searchCountry: boolean = false
   isLoading = false
@@ -73,6 +72,7 @@ export class CountriesListComponent implements OnInit {
       this.subscription = this.countriesService.getCountries()
       this.ngOnInit()
     }
+    event.target.value = ''
     this.error = ''
   }
 
@@ -80,6 +80,7 @@ export class CountriesListComponent implements OnInit {
     this.error = ''  
     this.searchCountry = true
     this.subscription = this.countriesService.getCountriesByRegion(region.value)
+    region.value = ''
     this.ngOnInit()
   }
 
