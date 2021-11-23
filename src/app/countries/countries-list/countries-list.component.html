@@ -1,41 +1,54 @@
-<div class="container">
-  <div class="row" style="margin-top: 100px;">
-    <div class="col-md-6">
-      <!-- <app-search></app-search> -->
-      <mat-form-field class="searchInput" appearance="fill">
-        <mat-label>
-          Search for a country...
-        </mat-label>
-        <mat-icon matPrefix>search</mat-icon>
-        <input type="search" matInput placeholder="Search for a country" (keydown.enter)="onKeyDown($event)">
-      </mat-form-field>
-    </div>
-    <div class="col-md-6">
-      <!-- <app-filter></app-filter> -->
-      <mat-form-field class="filterSelect" appearance="fill">
-        <mat-label>Filter by region</mat-label>
-        <mat-select name="region" (selectionChange)="onSearchByRegion($event)">
-          <mat-option *ngFor="let region of regions" [value]="region">
-            {{region}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-5">
+    <!-- <app-search></app-search> -->
+    <mat-form-field class="searchInput" appearance="fill">
+      <mat-label>
+        Search for a country...
+      </mat-label>
+      <mat-icon matPrefix>search</mat-icon>
+      <input type="search" matInput placeholder="Search for a country" (keydown.enter)="onKeyDown($event)">
+    </mat-form-field>
   </div>
-  <div class="row">
-    <div style="text-align:center" *ngIf="isLoading">
-      <app-loading-spinner></app-loading-spinner>
-    </div>
-    <div class="alert alert-danger" *ngIf="error">
-      <p>{{ error }}</p>
-    </div> 
+  <div class="col-xs-12 col-md-7">
+    <!-- <app-filter></app-filter> -->
+    <!-- <div 
+        class="btn-group float-right-sm float-right-lg"
+        appDropdown
+        style="margin-right: 45px;">
+        <button 
+        type="button"
+        class="btn btn-lg  dropdown-toggle" style="background-color: #FFFFFF;">
+        Manage Recipe <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a style="cursor: pointer;">Add ingredints to Shoppling List</a></li>
+            <li><a style="cursor: pointer;">Edit Recipe</a></li>
+            <li><a style="cursor: pointer;">Delete Recipe</a></li>
+        </ul>
+    </div> -->
+    <mat-form-field class=" float-right-sm float-right-lg" appearance="fill" style="margin-right: 45px;">
+      <mat-label>Filter by region</mat-label>
+      <mat-select name="region" (selectionChange)="onSearchByRegion($event)">
+        <mat-option *ngFor="let region of regions" [value]="region">
+          {{region}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
-  <div class="row" style="margin-top: 50px;" *ngIf="!isLoading && !error">
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let country of countries; let i = index">
-        <app-country-card 
-        [country]="country"
-        [index]="i"
-        ></app-country-card>
-    </div>
+</div>
+<div class="d-flex flex-row justify-content-center">
+  <div class="" *ngIf="isLoading">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+  <div class="alert alert-danger" *ngIf="error">
+    <p>{{ error }}</p>
+  </div> 
+</div>
+<div class="row " *ngIf="!isLoading && !error">
+  <div class="d-flex justify-content-sm justify-content-lg col-xs-12 col-sm-12 col-md-6 col-lg-3" style="text-align: justify;" *ngFor="let country of countries; let i = index">
+      <app-country-card 
+      [country]="country"
+      [index]="i"
+      ></app-country-card>
   </div>
 </div>

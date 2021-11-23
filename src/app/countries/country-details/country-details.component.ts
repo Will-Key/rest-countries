@@ -10,7 +10,7 @@ import { CountriesService } from '../countries.service';
 })
 export class CountryDetailsComponent implements OnInit, OnDestroy {
   borders: string[] = []
-  languages: string[] = []
+  languages: string = ''
   currencies!: {
     name: string;
   }[];
@@ -38,7 +38,7 @@ export class CountryDetailsComponent implements OnInit, OnDestroy {
     this.subscription = this.countriesService.getCountry(this.countryName).subscribe(
       (country: any) => {
         this.borders = country[0].borders
-        this.languages = Object.values(country[0].languages)
+        this.languages = (Object.values(country[0].languages)).join()
         this.currencies = Object.values(country[0].currencies)
 
         this.isLoading = false

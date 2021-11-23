@@ -21,6 +21,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select'; 
 import { MatCardModule } from '@angular/material/card'
 import { AppRoutingModule } from './app-routing.module';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [	
@@ -32,7 +33,8 @@ import { AppRoutingModule } from './app-routing.module';
     CountryDetailsComponent,
     FilterComponent,
     SearchComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    DropdownDirective,
    ],
   imports: [
     BrowserModule,

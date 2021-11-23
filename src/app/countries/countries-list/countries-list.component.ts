@@ -25,6 +25,7 @@ export class CountriesListComponent implements OnInit {
   ngOnInit() {
     this.countries = []
 
+    this.error = ''
     this.isLoading = true
     console.log(this.searchCountry);
     
@@ -72,9 +73,11 @@ export class CountriesListComponent implements OnInit {
       this.subscription = this.countriesService.getCountries()
       this.ngOnInit()
     }
+    this.error = ''
   }
 
-  onSearchByRegion(region: any) {    
+  onSearchByRegion(region: any) {  
+    this.error = ''  
     this.searchCountry = true
     this.subscription = this.countriesService.getCountriesByRegion(region.value)
     this.ngOnInit()

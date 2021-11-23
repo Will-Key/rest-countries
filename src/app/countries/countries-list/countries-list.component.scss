@@ -1,9 +1,25 @@
 .searchInput {
-  margin-left: 5px;
-  width: 70%;
+  //margin-left: 5px;
+  width: 100%;
 }
 
-.filterSelect {
-  float: right;
-  margin-right: 40px;
+
+ /* Float to the right on screens that are equal to or less than 768px wide */
+ @media (max-width: 768px) {
+  .float-right-sm {
+    float: left;
+  };
+  .justify-content-sm {
+    justify-content: center;
+  }
 }
+
+/* Float to the right on screens that are equal to or greater than 769px wide */
+@media (min-width: 769px) {
+  .float-right-lg {
+    float: right;
+  };
+  .justify-content-lg {
+    justify-content: space-between;
+  }
+} 
