@@ -14,9 +14,9 @@
     <p>{{ error }}</p>
   </div> 
 </div>
-<div class="row" style="margin-top:20px">
-  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
-    <img src="{{country.flags.svg}}" alt="{{country.name.official}}">
+<div class="row" style="margin-top:20px" *ngIf="!isLoading">
+  <div class="image-card col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+    <img src="{{country.flags.png}}" alt="{{country.name.official}}" >
   </div>
   <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12" style="margin-top:20px">
     <h1><strong>{{country.name.common}}</strong></h1>

@@ -27,7 +27,7 @@ export class DataStorageService {
 
   fetchCountry(name: string) {
     return this.http.get<CountryModel[]>(
-      `https://restcountries.com/v3.1/name/${name}`,
+      `https://restcountries.com/v3.1/name/${name}?fullText=true`,
     ).pipe(
       map(
         country => {

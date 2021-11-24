@@ -10,8 +10,6 @@ import { CountriesComponent } from './countries/countries.component';
 import { CountriesListComponent } from './countries/countries-list/countries-list.component';
 import { CountryCardComponent } from './countries/countries-list/country-card/country-card.component';
 import { CountryDetailsComponent } from './countries/country-details/country-details.component';
-import { FilterComponent } from './countries/filter/filter.component';
-import { SearchComponent } from './countries/search/search.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar'; 
@@ -31,8 +29,6 @@ import { DropdownDirective } from './shared/dropdown.directive';
     CountriesListComponent,
     CountryCardComponent,
     CountryDetailsComponent,
-    FilterComponent,
-    SearchComponent,
     LoadingSpinnerComponent,
     DropdownDirective,
    ],

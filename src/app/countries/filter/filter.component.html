@@ -1,8 +1,0 @@
-<mat-form-field class="filterSelect" appearance="fill">
-  <mat-label>Filter by region</mat-label>
-  <mat-select name="region" (selectionChange)="onSearchByRegion($event)">
-    <mat-option *ngFor="let region of regions" [value]="region">
-      {{region}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>

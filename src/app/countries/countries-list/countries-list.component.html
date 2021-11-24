@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-xs-12 col-sm-12 col-md-5">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5">
     <!-- <app-search></app-search> -->
     <mat-form-field class="searchInput" appearance="fill">
       <mat-label>
@@ -9,24 +9,9 @@
       <input type="search" matInput placeholder="Search for a country" (keydown.enter)="onKeyDown($event)">
     </mat-form-field>
   </div>
-  <div class="col-xs-12 col-md-7">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
     <!-- <app-filter></app-filter> -->
-    <!-- <div 
-        class="btn-group float-right-sm float-right-lg"
-        appDropdown
-        style="margin-right: 45px;">
-        <button 
-        type="button"
-        class="btn btn-lg  dropdown-toggle" style="background-color: #FFFFFF;">
-        Manage Recipe <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-            <li><a style="cursor: pointer;">Add ingredints to Shoppling List</a></li>
-            <li><a style="cursor: pointer;">Edit Recipe</a></li>
-            <li><a style="cursor: pointer;">Delete Recipe</a></li>
-        </ul>
-    </div> -->
-    <mat-form-field class=" float-right-sm float-right-lg" appearance="fill" style="margin-right: 45px;">
+    <mat-form-field class="margin-right-lg margin-right-md float-right-sm float-right-lg" appearance="fill" >
       <mat-label>Filter by region</mat-label>
       <mat-select name="region" (selectionChange)="onSearchByRegion($event)">
         <mat-option *ngFor="let region of regions" [value]="region">
@@ -44,8 +29,8 @@
     <p>{{ error }}</p>
   </div> 
 </div>
-<div class="row " *ngIf="!isLoading && !error">
-  <div class="d-flex justify-content-sm justify-content-lg col-xs-12 col-sm-12 col-md-6 col-lg-3" style="text-align: justify;" *ngFor="let country of countries; let i = index">
+<div class="row"  *ngIf="!isLoading && !error">
+  <div class="d-flex justify-content-sm justify-content-lg col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3"  *ngFor="let country of countries; let i = index">
       <app-country-card 
       [country]="country"
       [index]="i"

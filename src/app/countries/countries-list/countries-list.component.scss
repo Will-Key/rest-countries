@@ -15,7 +15,7 @@
 }
 
 /* Float to the right on screens that are equal to or greater than 769px wide */
-@media (min-width: 769px) {
+@media (min-width: 811px) {
   .float-right-lg {
     float: right;
   };
@@ -23,3 +23,9 @@
     justify-content: space-between;
   }
 } 
+
+@media (min-width: 1500px) {
+  .margin-right-lg {
+    margin-right: 45px;
+  }
+}

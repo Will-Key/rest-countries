@@ -10,7 +10,7 @@ import { CountriesService } from "../countries.service";
   styleUrls: ["./countries-list.component.scss"]
 })
 export class CountriesListComponent implements OnInit {
-  regions = ['Filter by region', 'Africa', 'America', 'Asia', 'Europe', 'Oceania']
+  regions = ['Africa', 'America', 'Asia', 'Europe', 'Oceania']
   countries!: CountriesModel[];
   searchCountry: boolean = false
   isLoading = false
@@ -72,7 +72,6 @@ export class CountriesListComponent implements OnInit {
       this.subscription = this.countriesService.getCountries()
       this.ngOnInit()
     }
-    event.target.value = ''
     this.error = ''
   }
 
@@ -80,7 +79,6 @@ export class CountriesListComponent implements OnInit {
     this.error = ''  
     this.searchCountry = true
     this.subscription = this.countriesService.getCountriesByRegion(region.value)
-    region.value = ''
     this.ngOnInit()
   }
 
